@@ -28,7 +28,7 @@ const Task = () => {
   return (
     <>
       <div className="py-12">
-        <div className="card-actions justify-center">
+        <div className="card-actions justify-center bg-base-100">
           <label
             htmlFor="task-modal"
             className="btn btn-md btn-primary text-white uppercase"

@@ -36,7 +36,7 @@ const List = () => {
   };
 
   return (
-    <div className="overflow-x-auto container mx-auto">
+    <div className="overflow-x-auto container mx-auto h-screen">
       <table className="table w-full">
         <thead>
           <tr>

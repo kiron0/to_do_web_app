@@ -14,9 +14,9 @@ const Home = () => {
           />
           <div class="text-center lg:w-2/3 w-full">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              K Task To-Do Web App
+              K Task ToDo Web App
             </h1>
-            <p class="mb-8 leading-relaxed">
+            <p class="mb-8 leading-relaxed font-semibold">
               ToDo List App is a kind of app that generally used to maintain our
               day-to-day tasks or list everything that we have to do, with the
               most important tasks at the top of the list, and the least
@@ -25,7 +25,7 @@ const Home = () => {
             </p>
             <div class="flex justify-center">
               <Link to="/task">
-                <button class="inline-flex text-white border-0 py-2 px-6 focus:outline-none rounded text-lg btn-primary">
+                <button class="inline-flex text-white border-0 py-4 px-12 focus:outline-none rounded text-lg btn-primary">
                   Add Your First ToDo
                 </button>
               </Link>
