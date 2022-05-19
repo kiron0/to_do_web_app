@@ -13,7 +13,7 @@ const Task = () => {
       title: e.target.title.value,
       description: e.target.description.value,
     };
-    fetch("http://localhost:5000/tasks", {
+    fetch("https://todo-web-app2.herokuapp.com/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

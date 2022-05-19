@@ -15,7 +15,7 @@ const List = () => {
   useEffect(() => {
     const getOrders = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/my-tasks?email=${email}`;
+      const url = `https://todo-web-app2.herokuapp.com/my-tasks?email=${email}`;
       try {
         const { data } = await axios.get(url, {
           headers: {
@@ -45,7 +45,7 @@ const List = () => {
     }).then((result) => {
       if (result.value) {
         Swal.fire("Deleted!", "Your task has been deleted.", "success");
-        fetch(`http://localhost:5000/tasks/${id}`, {
+        fetch(`https://todo-web-app2.herokuapp.com/tasks/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -69,7 +69,7 @@ const List = () => {
     }).then((result) => {
       if (result.value) {
         Swal.fire("Completed!", "Your task has been completed.", "success");
-        fetch(`http://localhost:5000/tasks/${id}`, {
+        fetch(`https://todo-web-app2.herokuapp.com/tasks/${id}`, {
           method: "PATCH",
         })
           .then((res) => res.json())

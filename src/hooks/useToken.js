@@ -7,9 +7,12 @@ const useToken = (user) => {
     const getToken = async () => {
       const email = user?.user?.email;
       if (email) {
-        const { data } = await axios.post("http://localhost:5000/login", {
-          email,
-        });
+        const { data } = await axios.post(
+          "https://todo-web-app2.herokuapp.com/login",
+          {
+            email,
+          }
+        );
         localStorage.setItem("accessToken", data.accessToken);
         setToken(data.accessToken);
       }
