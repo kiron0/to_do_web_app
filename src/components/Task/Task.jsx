@@ -1,11 +1,15 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
+import auth from "../Firebase/firebase.init";
 import List from "../List/List";
 
 const Task = () => {
+  const [user] = useAuthState(auth);
   const handleTaskSubmit = (e) => {
     e.preventDefault();
     const task = {
+      email: user?.email,
       title: e.target.title.value,
       description: e.target.description.value,
     };
@@ -13,6 +17,7 @@ const Task = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(task),
     })
@@ -25,6 +30,7 @@ const Task = () => {
         }
       });
   };
+
   return (
     <>
       <div className="py-12">

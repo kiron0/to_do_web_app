@@ -4,19 +4,20 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import Loading from "../../Loading/Loading";
 import auth from "../../Firebase/firebase.init";
+import useToken from "../../../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading] = useSignInWithGoogle(auth);
-
+  const [token] = useToken(gUser);
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (gUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [gUser, from, navigate]);
+  }, [token, gUser, from, navigate]);
 
   if (gLoading) {
     return <Loading></Loading>;
